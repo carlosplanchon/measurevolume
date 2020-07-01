@@ -1,5 +1,5 @@
 # measurevolume
-Measure volume of an exchange based on snapshots of the order book.
+Gauge volume of an exchange based on snapshots of the order book.
 
 <img src='market_takers.png'>
 
@@ -8,6 +8,8 @@ This program works by looking for the difference between two snapshots in the or
 Caution: Exchanges engaged in wash trading will give unreal figures.
 
 Example format of input data (ON CSV):
+ORDER_BOOK.tar.xz contains a 12 hours log (545Mb) of two order books.
+
 {'timestamp': 1592726830.0367844,
  'exchange': 'EX1',
  'bids': [['49779.15', '0.02'],
