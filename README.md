@@ -8,7 +8,8 @@ This program works by looking for the difference between two snapshots in the or
 Caution: Exchanges engaged in wash trading will give unreal figures.
 
 Example format of input data (ON CSV):
-ORDER_BOOK.tar.xz contains a 12 hours log (545Mb) of two order books.
+ORDER_BOOK.tar.xz contains a 12 hours log (545Mb) of two order books belonging to cryptocurrency exchanges.
+Values belong to the pair BRL/BTC (Brazilian Real / Bitcoin).
 
 {'timestamp': 1592726830.0367844,
  'exchange': 'EX1',
