@@ -1,5 +1,5 @@
 # measurevolume
-Gauge volume of an exchange based on snapshots of the order book.
+Gauge activity of market takers based on snapshots of the order book.
 
 <img src='market_takers.png'>
 
