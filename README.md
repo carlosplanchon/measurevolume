@@ -1,11 +1,13 @@
 # measurevolume
 Measure volume of an exchange based on snapshots of the order book.
 
+<img src='market_takers.png'>
+
 This program works by looking for the difference between two snapshots in the order book.
 
 Caution: Exchanges engaged in wash trading will give unreal figures.
 
-Format:
+Example format of input data (ON CSV):
 {'timestamp': 1592726830.0367844,
  'exchange': 'EX1',
  'bids': [['49779.15', '0.02'],
