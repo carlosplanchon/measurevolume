@@ -1,0 +1,46 @@
+[project]
+name = "measurevolume"
+version = "1.0.0"
+description = "Estimate market-taker activity from order-book snapshots by measuring visible depth depletion."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Carlos A. Planchón" }]
+requires-python = ">=3.10"
+keywords = [
+    "order-book",
+    "market-microstructure",
+    "liquidity",
+    "cryptocurrency",
+    "wash-trading",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = []
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+
+[project.scripts]
+measurevolume = "measurevolume.cli:main"
+
+[project.urls]
+Repository = "https://github.com/carlosplanchon/measurevolume"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.16.4",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["measurevolume"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
