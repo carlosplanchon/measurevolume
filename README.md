@@ -11,6 +11,17 @@ was observable in one snapshot and is gone in the next.
 
 ![Window-normalized depletion comparison](figures/banded_comparison.png)
 
+## Origins
+
+This project originally grew out of a cross-exchange arbitrage system I
+worked on in early 2020. Price differences between venues identified
+potential trades, but the spread alone was not enough. Execution also
+depended on understanding where buying or selling pressure was building
+in the order book. `measurevolume` was developed to estimate that
+pressure from successive snapshots by tracking visible depth depletion
+and, in particular, activity consistent with market takers consuming
+resting orders.
+
 ## Why depletion instead of reported volume
 
 Reported (tape) volume is cheap to fake: wash trades print volume without
@@ -190,9 +201,9 @@ breakdown.crossed, breakdown.near_touch, breakdown.deep
 - **2020**: hand-rolled level alignment with an `unmatched_volume`
   heuristic; partially filtered window scroll-out but silently discarded
   fully swept windows.
-- **2026 (Feb)**: OOP refactor; the dict-based diff was cleaner but
-  silently changed semantics: every vanished level counted, including
-  scroll-out.
+- **2026 (Feb)**: OOP refactor; the cleaner dict-based diff changed the
+  semantics without anyone noticing: every vanished level counted,
+  including scroll-out.
 - **2026 (Aug)**: the experiment reformulated with a one-sided far boundary,
   window normalization by price bands, confidence tiers, gap handling, and
   the top-20 control. The 2020 chart's hidden bias is now part of the
