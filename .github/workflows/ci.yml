@@ -50,7 +50,7 @@ jobs:
           enable-cache: true
       - name: Sync with plot extra (locked)
         run: uv sync --locked --all-extras
-      - name: CLI smoke: analyze + figures on the first 400 snapshots
+      - name: CLI smoke (analyze + figures, first 400 snapshots)
         run: |
           uv run --frozen measurevolume analyze ORDER_BOOK.csv.tar.xz \
             --limit 400 --top-n-control 20 --out ci-figures --quiet
